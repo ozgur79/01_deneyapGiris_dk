@@ -7,7 +7,7 @@ Bu klasör, **Deneyap Mini v2** kartı için hazırlanan ders materyalinin evidi
 `deneyapAtolyem` web portalına girdi olacak.
 
 ## Sync kuralı
-Bu dosya ile `AGENTS.md`'nin ortak bölümleri birebir aynı olmak zorunda. Biri güncellenince
+Bu dosya ile `CLAUDE.md`'nin ortak bölümleri birebir aynı olmak zorunda. Biri güncellenince
 diğeri de **aynı oturumda** güncellenir.
 
 ## Girdi zinciri: ak → dk
@@ -33,6 +33,11 @@ id'ler kayar ve iki müfredat arasındaki tek bağ kopar.
   `.ino`'ya asla girmez, yalnız `ders.md` içinde `[ileri]` etiketli bloklarda yaşar.
 - **Ders başına tek fikir kuralı dk'da YOK.** Bir dk dersi birkaç ak dersini ve birkaç kazanım
   id'sini paketleyebilir. Gevşeyen yoğunluk; dil değil.
+- **Ama paketleme ardışık olmak zorunda.** dk, ak'nin zincirinden **atlayarak seçmez** —
+  aralarında başka ders olan ikisini birleştirmek paketleme değil, zincirin ortasından madde
+  seçmektir. Paketleme sırayı korur, atlama korumaz. Bir kavram sırasından önce gerekiyor
+  gibi görünüyorsa çözüm onu öne çekmek değil, **sırası gelince ilgili dk dersini
+  güncellemektir** — portal zaten sürekli güncelleniyor.
 - **Kara kutu üç katman:** (1) işaretle **ve o derste tek cümlelik fonksiyonel açıklama ver**
   — portal sırayı dayatmıyor, ders kendi başına ayakta durmalı; (2) her kutunun kendi Sokratik
   promptu; (3) ileride bir ders kutuyu tam açar. Üçü birden, biri ötekinin yerine geçmez.
