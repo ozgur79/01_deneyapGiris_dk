@@ -15,3 +15,13 @@ Append-only. Hiçbir şey silinmez.
   `cozumler/.ino` — tüm çıplak `5`/`6` → `D5`/`D6`. Kalıcı kural CLAUDE.md/AGENTS.md
   Tuzaklar'a yazıldı, knowledge notu: `🧠 500-Knowledge/ESP32-Deneyap-Pin-Numaralandirma.md`
   (zihinEv). Tur 01 artık commit'e hazır.
+- Tur 01 commit'lendi ve push'landı (`25dd18e`) — `dk0020_hariciLed` + `cozumler/` +
+  `kimlik_dk.txt`.
+- `Donanim-Referans-DYMv2.md` eklendi — Deneyap'ın 4 resmi sayfası + pin diyagramı tek
+  dosyada birleştirildi, bundan sonra her `board:` bloğu buna dayanacak (WebFetch güvenilmez
+  çıktı verdiği için). İki kaynak-içi çelişki bulunup dosyada işaretlendi: (1) Teknik
+  Özellikler "USB Mikro-B" diyor, pin diyagramı "TİP-C" diyor — Type-C güvenilir kabul
+  edildi (diyagram çizimi + dk'nin malzeme.md'si de Type-C diyor), fiziksel sette
+  doğrulanmalı; (2) pin diyagramı A7 gösteriyor gibi okunabiliyor ama üç metin kaynağı da
+  A0–A6 (7 pin) diyor ve analog(9)/dijital(21) toplamları yalnız A0–A6 ile tutuyor — A7
+  board: bloklarında kullanılmayacak.
