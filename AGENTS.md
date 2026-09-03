@@ -48,6 +48,11 @@ id'ler kayar ve iki müfredat arasındaki tek bağ kopar.
 - **Board sızması:** board'a özgü her gerçek (pin no, dahili LED API'si, mantık gerilimi,
   direnç değeri) `ders.md` frontmatter'ındaki `board:` bloğuna hapsedilir. KAVRAM metninde
   geçen board'a özel her şey o blokta da bulunmak zorunda.
+- **Pin numarası her zaman `D<n>` makrosuyla yazılır, çıplak sayı yasak** (`pinMode(D5, ...)`,
+  `pinMode(5, ...)` değil). Neden: Deneyap Mini v2'de `D5` etiketi GPIO39'a karşılık gelir
+  (`pins_arduino.h`), Uno'daki gibi pin numarası = fiziksel pin değildir. Çıplak sayı yazılırsa
+  kod derlenir ama kartta yanlış — hatta bazen boş/rezerve — bir pini sürer, LED donanımda
+  hiç yanmaz. Bkz. `🧠 500-Knowledge/ESP32-Deneyap-Pin-Numaralandirma.md` (zihinEv).
 - **Sızma taraması:** scriptteki her fonksiyon/operatör için "bu ilk nerede öğretildi?" diye
   sor. Cevap "hiçbir yerde" ise ya kara kutu olarak işaretle (üç katmanla), ya o yapıyı kullanma.
   Sessiz sızma kabul edilmez.
@@ -69,4 +74,10 @@ id'ler kayar ve iki müfredat arasındaki tek bağ kopar.
 - Faz 0 (kurulum) tamamlandı (2026-09-03).
 
 ## Tuzaklar
-(boş — bir şey patladıkça Kural/Neden/Nasıl şablonuyla eklenir)
+- **Kural:** kod pin numarasını her zaman `D<n>` makrosuyla yazar, çıplak GPIO sayısı
+  kullanmaz. **Neden:** Tur 01'de (`dk0020_hariciLed`) kod `pinMode(5, OUTPUT)` yazmıştı;
+  Deneyap Mini v2'de `D5` etiketi fiziksel olarak GPIO39'dur, GPIO5 değil — çıplak `5`
+  yazılınca kart board üzerinde "D5" yazan pini değil, tamamen başka (ve muhtemelen
+  bağlı olmayan) bir pini sürer. Donanımda LED hiç yanmazdı, hata Faz 3'e kadar
+  görünmeyecekti. **Nasıl:** her yeni `.ino`/`ders.md`'de pin argümanları grep'lenir,
+  çıplak sayı (`pinMode(<sayı>`, `digitalWrite(<sayı>`) varsa reddedilir.
