@@ -45,3 +45,8 @@ Append-only. Hiçbir şey silinmez.
   derlendi/kartta çalıştı alanlarını `evet` olarak kaydetti; sorun yok (`—`).
 - Mini sınavlardaki öğrenciye görünen doğru cevap işaretleri kaldırıldı. Cevap anahtarları
   öğretmenAnahtar deposunda ayrı tutuldu ve `python kontrol.py` ile denetlendi.
+- Tur 02 için `dk0030_ikiLed` yazıldı: ak0030 + ak0040 + ak0050 ardışık paketi,
+  D5/D6 makroları, AI Yoldaşı doktrini ve yetişkin kartı eklendi. Kart testi bekliyor;
+  bu turda commit atılmadı.
+- Özgür, dk0030'ün 2026-09-11'de derlendiğini ve kartta çalıştığını bildirdi. Test Günlüğü
+  güncellendi; sorun yok (`—`).

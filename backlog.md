@@ -1,5 +1,9 @@
 # Backlog
 
+- **Tur 02 teslim edildi:** `dk0030_ikiLed`, Özgür tarafından 2026-09-11'de derlendi ve
+  kartta çalıştı. Kaynak paketi ardışık `ak0030` + `ak0040` + `ak0050`; iki LED D5/D6 ve
+  `const int` isimleriyle çalışır.
+
 - **Açık soru:** dk0010'daki `pinMode(LED_BUILTIN, OUTPUT)` satırı korunuyor. Özgür'den
   `LED_BUILTIN` ile `RGBLED` ilişkisinin kart düzeyinde cevabı gelmedi; test edilmiş kod
   teori uğruna değiştirilmeyecek.
