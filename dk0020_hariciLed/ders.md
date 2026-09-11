@@ -105,7 +105,7 @@ ritim, ama ışık artık kartın üzerinde değil, senin kurduğun devrede.
 
 ## 7. Mini sınav
 1. [temel] LED'in hangi bacağı karta, hangisi dirence bağlanır?
-   - A) Uzun bacak karta, kısa bacak dirence ✅
+   - A) Uzun bacak karta, kısa bacak dirence
    - B) Kısa bacak karta, uzun bacak dirence
    - C) İkisi de karta bağlanır
    - D) İkisi de dirence bağlanır
@@ -113,7 +113,7 @@ ritim, ama ışık artık kartın üzerinde değil, senin kurduğun devrede.
 
 2. [temel] Bu derste direncin görevi nedir?
    - A) LED'i daha parlak yapmak
-   - B) LED'e giden akımı sınırlayıp LED'i korumak ✅
+   - B) LED'e giden akımı sınırlayıp LED'i korumak
    - C) Pin numarasını değiştirmek
    - D) delay() süresini kısaltmak
    - ipucu: Direnç kelimesinin "engellemek" anlamıyla ilişkisini düşün.
@@ -121,12 +121,12 @@ ritim, ama ışık artık kartın üzerinde değil, senin kurduğun devrede.
 3. [temel] Bu derste LED hangi pine bağlıdır?
    - A) D13
    - B) D6
-   - C) D5 ✅
+   - C) D5
    - D) D0
    - ipucu: `pinMode()` satırındaki isme bak.
 
 4. [temel] `digitalWrite(D5, HIGH);` satırı ne yapar?
-   - A) D5 pinine gerilim gönderir, LED yanar ✅
+   - A) D5 pinine gerilim gönderir, LED yanar
    - B) D5 pininin modunu ayarlar
    - C) 5 saniye bekler
    - D) LED'e renk gönderir
@@ -134,7 +134,7 @@ ritim, ama ışık artık kartın üzerinde değil, senin kurduğun devrede.
 
 5. [ileri] LED'i ters taksaydın (bacakları yer değiştirseydin) ne olurdu?
    - A) LED daha parlak yanardı
-   - B) LED hiç yanmazdı ✅
+   - B) LED hiç yanmazdı
    - C) Direnç yanardı
    - D) Kart bozulurdu
    - ipucu: LED yönlü bir parçadır — akım sadece tek yönde geçer.
@@ -142,28 +142,50 @@ ritim, ama ışık artık kartın üzerinde değil, senin kurduğun devrede.
 6. [ileri] Bu devrede mantık gerilimi 3.3V, direnç 220 ohm. Farklı bir kartta mantık
    gerilimi 5V olsaydı, aynı LED için genelde ne beklenir?
    - A) Aynı direnç değeri her board'da kullanılır
-   - B) Direnç değeri board'un gerilimine göre yeniden hesaplanır ✅
+   - B) Direnç değeri board'un gerilimine göre yeniden hesaplanır
    - C) Direnç hiç gerekmez
    - D) LED'in bacak yönü değişir
    - ipucu: Ohm Kanunu'nda gerilim değişirse ne değişir?
 
 ## 8. AI Yoldaşı promptları
 
+> **Önce bunu oku.** AI Yoldaşı sana devrenin nasıl kurulacağını, hangi pine
+> bağlayacağını ya da hangi direnci kullanacağını **söylemez** — bunlar sadece bu
+> derste yazar. **AI'ın dediği devrende çalışmıyorsa AI yanılmıştır, devren haklıdır.**
+> AI Yoldaşı zorunlu değildir; erişimin yoksa dersi §6'daki Sorun giderme ve aşağıdaki
+> "Yanındaki Yetişkine" kartıyla tamamlayabilirsin.
+
 ### Ders promptları
-- [temel] **Kavramsal** — "Sen sabırlı bir öğretmensin. Öğrenciye LED'in neden yönlü
-  bir parça olduğunu, su borusundaki tek yönlü bir vana benzetmesiyle buldurmaya
-  çalış. Cevabı söyleme, önce bir soru sor."
-- [temel] **digitalWrite vs neopixelWrite** — "Sen sabırlı bir öğretmensin. Öğrenci
-  bir önceki derste `neopixelWrite` ile renkli bir LED yaktı, şimdi `digitalWrite` ile
-  basit bir LED yakıyor. İkisi arasındaki farkı doğrudan söyleme; öğrenciye 'biri renk
-  gönderiyor, öteki sadece açıp kapatıyor' fikrine kendi kendine ulaşacağı bir soru sor."
-- [temel] **Hata giderme** — "Sen bir hata ayıklama koçusun. Öğrenci LED'i taktı ama
-  yanmıyor. Önce hangi üç şeyi kontrol etmesi gerektiğini (yön, pin numarası, direnç)
-  sorular sorarak buldur, cevabı doğrudan verme."
-- [ileri] **Pekiştirme** — "Sen ileri seviye bir mentorsun. Öğrenciye direncin neden
-  gerekli olduğunu, Ohm Kanunu'nu (V = I × R) hiç adını vermeden, 'gerilim sabitken
-  direnç artarsa akıma ne olur' sorusuyla düşündür. Formülü sen söyleme, öğrenci
-  kendi cümlesiyle ifade etsin."
+- [temel] **Kavramsal** — "Sen sabırlı bir öğretmensin. Deneyap Mini v2 kartında,
+  3.3V mantık gerilimiyle, D5 pinine 220 ohm dirençle bir LED bağladım. Bana LED'in
+  neden yönlü bir parça olduğunu, su borusundaki tek yönlü bir vana benzetmesiyle
+  buldurmaya çalış. Cevabı söyleme, önce bir soru sor."
+- [temel] **digitalWrite vs neopixelWrite** — "Sen sabırlı bir öğretmensin. Deneyap
+  Mini v2 kullanıyorum. Bir önceki derste `neopixelWrite` ile kartın üzerindeki renkli
+  LED'i yaktım, şimdi `digitalWrite(D5, HIGH)` ile devremdeki basit bir LED'i yakıyorum.
+  İkisi arasındaki farkı doğrudan söyleme; 'biri renk gönderiyor, öteki sadece açıp
+  kapatıyor' fikrine kendim ulaşacağım bir soru sor."
+- [temel] **Hata giderme** — "Sen bir hata ayıklama koçusun. Deneyap Mini v2 kartında
+  D5 pinine 220 ohm dirençle bağlı bir LED'im var ama yanmıyor. **Bana pin numarası,
+  direnç değeri ya da bağlantı tarifi verme** — devrenin nasıl kurulacağı dersimde
+  zaten yazıyor. Bunun yerine hangi üç şeyi (yön, pin uyuşması, direncin teması) hangi
+  sırayla kontrol etmem gerektiğini soru sorarak buldur."
+- [ileri] **Pekiştirme** — "Sen ileri seviye bir mentorsun. Deneyap Mini v2'de mantık
+  gerilimi 3.3V, kullandığım direnç 220 ohm. Direncin neden gerekli olduğunu, Ohm
+  Kanunu'nu (V = I × R) hiç adını vermeden, 'gerilim sabitken direnç artarsa akıma ne
+  olur' sorusuyla düşündür. Formülü sen söyleme, ben kendi cümlemle ifade edeyim."
+
+### Yanındaki yetişkine
+- [temel] **Yardım etmek isteyen büyüğe** — Bu kart çocuğa değil, yanındaki yetişkine
+  yazıldı; AI gerekmez, internet gerekmez.
+
+  > *Yardım etmek isterseniz cevabı söylemeyin, şu üç şeyi sırayla sorun:*
+  > 1. *LED'in uzun bacağı karta bakan tarafta mı?*
+  > 2. *Kartın üzerinde "D5" yazan pin ile kablonun takılı olduğu pin aynı mı?*
+  > 3. *Direncin iki ucu da breadboard'a tam oturmuş mu?*
+  >
+  > *Üçü de doğruysa ve LED hâlâ yanmıyorsa §6 Sorun giderme'deki "Kod yüklenmiyor"
+  > maddesine bakın — sorun devrede değil, karta yükleme ayarlarında olabilir.*
 
 ### Kara kutu promptları
 - [temel] **`void` nedir?** — "Sen meraklı bir öğretmensin. Öğrenci kodda `void setup()`

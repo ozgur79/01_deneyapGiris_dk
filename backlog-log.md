@@ -25,3 +25,23 @@ Append-only. Hiçbir şey silinmez.
   doğrulanmalı; (2) pin diyagramı A7 gösteriyor gibi okunabiliyor ama üç metin kaynağı da
   A0–A6 (7 pin) diyor ve analog(9)/dijital(21) toplamları yalnız A0–A6 ile tutuyor — A7
   board: bloklarında kullanılmayacak.
+
+## 2026-09-06
+- **dk0010_dahiliLed üretildi** (portal Ders 1.1). Klasörde daha önce yoktu. Kaynak
+  ak0010 + portalın test edilmiş Ders 1.1 kodu; kod aynen korundu.
+- **dk0020_hariciLed §8 doktrine uyduruldu** (board bağlamı, "pin verme" kısıtı, sabit
+  not, "Yanındaki yetişkine" kartı, "AI zorunlu değil" cümlesi).
+- **CLAUDE.md/AGENTS.md**: AI Yoldaşı doktrini (üç katman: §6 Sorun giderme -> yetişkin
+  kartı -> AI bonus) + seri hız 115200 + sınıf varsayan ifadelerin uyarlanması kuralı.
+- **Açık soru:** Ders 1.1'de `pinMode(LED_BUILTIN, OUTPUT)` gerekli mi — `neopixelWrite`
+  ayrı bir isim (`RGBLED`) kullanıyor. Kartta doğrulanacak, Arda'ya soru olarak gidecek.
+- **Öneri:** `cpp.neopixelwrite` kazanım id'si (dk önerir, ak ekler).- **Kazanım havuzu ikiye ayrıldı (Özgür kararı).** `kazanimlar-dk.md` açıldı: yalnız
+  Deneyap'a özgü, `dk.` önekli id'ler. Ortak kavramların tek kaynağı hâlâ ak. dk0010'un
+  frontmatter'ı `onerilen_kazanim` alanından gerçek id'lere geçti.
+- **dk0010/dk0020 inceleme onayı aldı, kart testi bekliyor — commit atılmadı.**
+
+## 2026-09-11
+- Özgür, dk0010 ve dk0020'nin kart testinden geçtiğini bildirdi. Test-Günlüğü iki ders için
+  derlendi/kartta çalıştı alanlarını `evet` olarak kaydetti; sorun yok (`—`).
+- Mini sınavlardaki öğrenciye görünen doğru cevap işaretleri kaldırıldı. Cevap anahtarları
+  öğretmenAnahtar deposunda ayrı tutuldu ve `python kontrol.py` ile denetlendi.
