@@ -11,6 +11,6 @@ Bir ders, burada olmayan bir malzemeyi gerektiremez.
 | Jumper kablo | sette var | |
 | Direnç | sette var | değer/adet Özgür dolduracak |
 | LED | sette var | renk/adet Özgür dolduracak |
-| Buton | *(eklenecek)* | LED dersleri bitince |
+| Buton | sette var | Özgür teyit etti (2026-09-18) |
 
 (liste açık uçlu — dersler ilerledikçe satır eklenir; adet/değer bilgisini Özgür doldurur)

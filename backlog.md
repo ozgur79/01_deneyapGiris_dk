@@ -1,5 +1,12 @@
 # Backlog
 
+- **İlk dilim / Oturum 1, ders 3 tamamlandı (2026-09-18):** Seri port dersi
+  `dk0040_ledDurumunuYaz` kartta test edildi, onaylandı; portal karşılığı `1.4`,
+  kaynak `ak0110`.
+- **dk0050 kararları geldi (Özgür, 2026-09-18):** Buton sette var, `malzeme.md`
+  güncellendi. `cpp.digitalread` / `cpp.if-else` / `hw.buton-devre` ak `kazanimlar.md`'ye
+  eklendi (Ortak). dk0050 için iş emri yazıldı, sırada.
+
 - **Tur 02 teslim edildi:** `dk0030_ikiLed`, Özgür tarafından 2026-09-11'de derlendi ve
   kartta çalıştı. Kaynak paketi ardışık `ak0030` + `ak0040` + `ak0050`; iki LED D5/D6 ve
   `const int` isimleriyle çalışır.
