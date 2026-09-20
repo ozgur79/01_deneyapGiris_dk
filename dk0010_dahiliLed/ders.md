@@ -57,7 +57,6 @@ Bu iki ayar bir kez yapılır; sonraki derslerde tekrar gerekmez.
 | --- | --- |
 | `void setup() {` | `setup()` bloğu başlar. |
 | `// setup() içindeki satırlar kart açılınca sadece 1 kez çalışır` | `setup()` içindeki satırlar kart açılınca sadece bir kez çalışır. |
-| `pinMode(LED_BUILTIN, OUTPUT);` | Kartın üzerindeki dahili LED'i kullanacağımızı söyler. |
 | `void loop() {` | `loop()` bloğu başlar. |
 | `// loop() içindeki satırlar setup bitince sürekli baştan tekrar eder` | `loop()` içindeki satırlar `setup()` bitince sürekli baştan tekrar eder. |
 | `neopixelWrite(RGBLED, 0, 0, 40);` | Dahili renkli LED'e renk gönderir: kırmızı 0, yeşil 0, mavi 40 — LED mavi yanar. |

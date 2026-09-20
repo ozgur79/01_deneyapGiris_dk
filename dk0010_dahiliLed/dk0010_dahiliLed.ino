@@ -18,7 +18,6 @@
 // --- KAVRAM ---
 void setup() {
   // setup() içindeki satırlar kart açılınca sadece 1 kez çalışır
-  pinMode(LED_BUILTIN, OUTPUT); // kartın üzerindeki dahili LED'i kullanacağımızı söyler
 }
 
 void loop() {
