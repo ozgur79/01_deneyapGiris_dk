@@ -20,7 +20,7 @@
 // Direnç, LED'e çok fazla akım gitmesini engeller ve LED'i korur
 void setup() {
   // { ve } arasındaki satırlar, o fonksiyona ait koddur; bu blok "başlangıç" bloğudur
-  pinMode(D5, OUTPUT); // D5 pinini, açıp kapatabileceğimiz bir pin yap (Ders 1.1'den hatırla)
+  pinMode(D5, OUTPUT); // D5 pinini, açıp kapatabileceğimiz bir pin yap
   // ; işareti, bir komutun bittiğini gösterir
 }
 

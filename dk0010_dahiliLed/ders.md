@@ -8,11 +8,10 @@ unite: 0-LED
 kazanimlar:
   - cpp.setup-loop      # ak havuzu
   - cpp.delay           # ak havuzu
-  - cpp.pinmode         # ak havuzu
   - hw.dahili-led       # ak havuzu
   - dk.neopixelwrite    # dk havuzu (Deneyap'a özgü)
   - dk.rgb-karisim      # dk havuzu (Deneyap'a özgü)
-kara_kutu: [void, OUTPUT]
+kara_kutu: [void]
 malzeme:
   - Deneyap Mini v2 kartı
   - Type-C USB kablosu
@@ -174,12 +173,6 @@ küçüktür ama karanlıkta rahat görünür.
   verme; 'bu kelime bir şeyin olmadığını mı, yoksa bir şeyin nasıl davranacağını mı
   anlatıyor olabilir?' gibi bir soruyla merak uyandır. Bu konu ileride ayrı bir derste
   tam açılacak — şimdilik sadece merak bırak, tam açıklama verme."
-- [temel] **`OUTPUT` nedir?** — "Sen meraklı bir öğretmensin. Kodumda
-  `pinMode(LED_BUILTIN, OUTPUT)` yazıyor ama `OUTPUT` kelimesinin neyi ayarladığını
-  bilmiyorum. Cevabı verme; 'bir pin hem bilgi gönderebilir hem bilgi alabilir olsaydı,
-  bu ikisini ayırmak için kartın bir şey bilmesi gerekmez miydi?' gibi bir soruyla
-  düşündür. Bu konu buton dersinde `INPUT` ile birlikte tam açılacak — şimdilik sadece
-  merak bırak."
 
 ### Yanındaki yetişkine
 - [temel] **Yardım etmek isteyen büyüğe** — Bu kart çocuğa değil, yanındaki yetişkine

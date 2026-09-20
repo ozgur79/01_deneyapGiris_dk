@@ -66,7 +66,7 @@ Metin şeması: LED uzun bacak (+) → D5, kısa bacak (−) → 220 ohm direnç
 | `// LED'in iki bacağı var: uzun bacak (+) ve kısa bacak (-) - yönü önemlidir, ters takarsan LED yanmaz` | LED'in iki bacağı var: uzun bacak (+) ve kısa bacak (−) — yönü önemlidir, ters takarsan LED yanmaz. |
 | `// Direnç, LED'e çok fazla akım gitmesini engeller ve LED'i korur` | Direnç, LED'e çok fazla akım gitmesini engeller ve LED'i korur. |
 | `void setup() {` | `{` ve `}` arasındaki satırlar o fonksiyona ait koddur; bu blok "başlangıç" bloğudur. |
-| `pinMode(D5, OUTPUT);` | D5 pinini, açıp kapatabileceğimiz bir pin yap. `pinMode`'u Ders 1.1'den hatırlıyorsun — orada `LED_BUILTIN` içindi, burada D5 pini için aynı işi yapıyor. **`D5` kartın üzerinde yazan pin adıdır — düz `5` yazsaydık kart bunu farklı bir pin sanırdı, bu yüzden Deneyap'ta pin isimleri hep `D` ile başlar.** |
+| `pinMode(D5, OUTPUT);` | **Yeni komut.** D5 pinini, açıp kapatabileceğimiz bir pin yap. **`D5` kartın üzerinde yazan pin adıdır — düz `5` yazsaydık kart bunu farklı bir pin sanırdı, bu yüzden Deneyap'ta pin isimleri hep `D` ile başlar.** |
 | `}` (setup sonu) | `;` işareti bir komutun bittiğini gösterir; `}` bloğun bittiğini gösterir. |
 | `void loop() {` | loop() içindeki satırlar setup bitince sürekli baştan tekrar eder. |
 | `digitalWrite(D5, HIGH);` | **Yeni komut.** `digitalWrite(pin, HIGH)` o pine gerilim gönderir, pin "açık" olur → LED yanar. Ders 1.1'de dahili LED'i `neopixelWrite` ile yakmıştın; o üç kanala (kırmızı/yeşil/mavi) 0-255 arası sayı gönderip renk ayarlıyordu. `digitalWrite` bundan daha basit: pini sadece iki durumda tutar, açık ya da kapalı — renk yok. |

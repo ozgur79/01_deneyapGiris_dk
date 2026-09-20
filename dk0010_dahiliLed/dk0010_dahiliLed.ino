@@ -7,8 +7,7 @@
 
   Şimdilik kara kutu (sonra açacağız):
     void    -> "fonksiyon" konusunda açılacak
-    OUTPUT  -> buton dersinde, INPUT ile birlikte açılacak
-  Bunlara şimdilik dokunma, sırası gelince tek tek açacağız.
+  Buna şimdilik dokunma, sırası gelince açacağız.
 
   kaynak: ak0010_dahiliLed (D:\Atolye\Arduino\01_arduinoGiris_ak) + portalın Ders 1.1
           kodu (web_v1/script.js, LED_CODE). Kod portaldaki hâliyle korundu — o sürüm
