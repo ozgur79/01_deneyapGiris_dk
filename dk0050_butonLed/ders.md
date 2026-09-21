@@ -1,10 +1,9 @@
 ---
 dk_no: dk0050
-portal_ders: ""
-portal_ders_not: "Modul1-Mufredat.md'deki 1.1-1.6 hedef listesinde buton/INPUT/if-else
-  dersine karşılık gelen bir madde yok (en yakını 1.5 Karar Yapıları, ama o random()
-  ile birlikte tanımlı, buton içermiyor). Tahmin edilmedi, alan boş bırakıldı --
-  Özgür'e sorulacak, bkz. backlog.md."
+portal_ders: "2.1"
+portal_ders_not: "Modul1-Mufredat.md'deki 1.1-1.6 hedef listesinde karşılığı yoktu.
+  Özgür'e soruldu (2026-09-21): yeni Modül 2 (Dijital Giriş / Sensörler) açıldı,
+  bkz. Modul2-Mufredat.md. dk0050 = 2.1."
 kaynak_ak: []
 kaynak_ak_planlanan: ak02xx
 baslik: Butona basınca LED yansın

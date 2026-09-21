@@ -1,13 +1,10 @@
 # Backlog
 
-- **Açık soru — `portal_ders` (dk0050) belirsiz:** `Modul1-Mufredat.md`'deki 1.1-1.6
-  hedef listesinde buton/INPUT/if-else dersine karşılık gelen madde yok (en yakını 1.5
-  "Karar Yapıları", ama `random()` ile birlikte tanımlı, buton içermiyor). `dk0050/ders.md`
-  frontmatter'ında `portal_ders` boş bırakıldı. Özgür'e sorulacak.
-- **Açık soru — malzeme (dk0050):** `malzeme.md`'deki `Direnç` satırı genel ("değer/adet
-  Özgür dolduracak"), dk0050 **iki farklı değer** kullanıyor: 220 ohm (LED, zaten var) +
-  **10K ohm (buton pull-down, yeni)**. Setinde 10K ohm direnç olup olmadığı teyit
-  edilmeli; yoksa devre farklı bir pull-down/pull-up değeriyle güncellenir.
+- [x] **`portal_ders` (dk0050) — Ortak çözdü, 2026-09-21:** Özgür'ün kararıyla yeni modül
+  açıldı — **Modül 2: Dijital Giriş / Sensörler**
+  (`zihinEv/🏰 300-Projects/deneyapAtolyem/Modul2-Mufredat.md`). dk0050 = **2.1**.
+  `ders.md` frontmatter'ı güncellendi (`portal_ders: "2.1"`). dk'nin bu alana dokunmasına
+  gerek yok, doldu.
 
 - **İlk dilim / Oturum 1, ders 3 tamamlandı (2026-09-18):** Seri port dersi
   `dk0040_ledDurumunuYaz` kartta test edildi, onaylandı; portal karşılığı `1.4`,

@@ -9,7 +9,7 @@ Bir ders, burada olmayan bir malzemeyi gerektiremez.
 | Type-C ↔ USB kablo | sette var | |
 | Breadboard | sette var | |
 | Jumper kablo | sette var | |
-| Direnç | sette var | değer/adet Özgür dolduracak |
+| Direnç | sette var | 220 ohm (LED) ve 10K ohm (buton pull-down, dk0050) yeterince var — Özgür teyit etti (2026-09-21) |
 | LED | sette var | renk/adet Özgür dolduracak |
 | Buton | sette var | Özgür teyit etti (2026-09-18) |
 
