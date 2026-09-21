@@ -50,3 +50,29 @@ Append-only. Hiçbir şey silinmez.
   bu turda commit atılmadı.
 - Özgür, dk0030'ün 2026-09-11'de derlendiğini ve kartta çalıştığını bildirdi. Test Günlüğü
   güncellendi; sorun yok (`—`).
+
+## 2026-09-18
+- Seri port dersi `dk0040_ledDurumunuYaz` (Oturum 1, ders 3) kartta test edildi,
+  onaylandı; portal karşılığı `1.4`, kaynak `ak0110`.
+- dk0050 kararları geldi: buton sette var (`malzeme.md` güncellendi),
+  `cpp.digitalread`/`cpp.if-else`/`hw.buton-devre` ak `kazanimlar.md`'ye eklendi
+  (commit `d4a293d`). dk0050 için iş emri Ev'de yazıldı, sırada.
+
+## 2026-09-21
+- dk0050 (`dk0050_butonLed`, Oturum 1'in dördüncü ve son dersi) teslim edildi. İş emri
+  `D:\zihinEv\🏰 300-Projects\deneyapAtolyem\is-emri-dk0050.md` (Ev'de, Atölye repo'sunda
+  değil) uygulandı. `INPUT` bu derste ilk kez gerçek anlamıyla açıldı, `kara_kutu`
+  alanından `OUTPUT` çıktı (dk0010'daki söz tutuldu). Devre **harici pull-down direnç**
+  (10K ohm) ile kuruldu — kaynak kod `INPUT` yazıyordu (`INPUT_PULLUP` değil) ve
+  `digitalRead(...)==1`'i "basılı" sayıyordu, bu yalnız pull-down ile tutarlı.
+- İlk teslimde pin ham kaynaktaki gibi **A1/A0** bırakılmıştı. Özgür sordu: "led ve
+  buton analog girişlerde, özel bir sebebi var mı, neden dijital girişlerde değil" —
+  bu derste `analogRead`/`analogWrite` hiç kullanılmadığından analog pin olmasının
+  işlevsel bir gerekçesi yoktu, yalnız ham kaynaktan miras kalmıştı. Özgür kararıyla
+  boşta olan **D9 (LED) / D10 (buton)**'a çevrildi — dk0020/dk0030/dk0040 ile tutarlı.
+- Özgür kartta test etti, geçti. Test Günlüğü `evet`/`evet` olarak güncellendi
+  (`Özgür kartta test etti.`). Oturum 1 (dahili LED · harici LED · seri port · buton-LED)
+  tamamen kapandı; Oturum 2 (joystick, ders 5-6) iş emri yazılabilir hâle geldi.
+- Açık kalan iki soru backlog.md'ye taşındı: `portal_ders` belirsizliği (Modül 1
+  listesinde buton dersine karşılık gelen madde yok) ve `malzeme.md`'deki 10K ohm
+  pull-down direncinin sette olup olmadığının teyidi.
