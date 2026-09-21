@@ -14,9 +14,12 @@
   kartta çalıştı. Kaynak paketi ardışık `ak0030` + `ak0040` + `ak0050`; iki LED D5/D6 ve
   `const int` isimleriyle çalışır.
 
-- **Açık soru:** dk0010'daki `pinMode(LED_BUILTIN, OUTPUT)` satırı korunuyor. Özgür'den
-  `LED_BUILTIN` ile `RGBLED` ilişkisinin kart düzeyinde cevabı gelmedi; test edilmiş kod
-  teori uğruna değiştirilmeyecek.
+- **Kapandı (Özgür, 2026-09-21):** dk0010'daki `pinMode(LED_BUILTIN, OUTPUT)` sorusu
+  çözüldü — `neopixelWrite` pini `pinMode`/`digitalWrite` ile değil kendi içinde sürüyor
+  (`Donanim-Referans-DYMv2.md`'deki D14/RGBLED notuyla tutarlı), yani satır **işlevsizdi**.
+  Çalışma alanında bu satırı (yorum olarak) geri getiren, `OUTPUT`'u kara kutuya ekleyen ve
+  rengi kırmızıya çeviren commit'lenmemiş bir deneme bulundu; hepsi geri alındı, dosya
+  test edilmiş/commit'li haline (mavi) döndü.
 
 - Faz 0 (kurulum) tamamlandı ve denetlendi. Üç düzeltme uygulandı (AGENTS.md sync atfı,
   malzeme listesi, ardışıklık kuralı).
@@ -87,6 +90,9 @@
   satır zararsız ama gereksiz, (b) farklı pinler ve satır alakasız bir pini çıkış
   yapıyor. **Kartta doğrulanmalı** — Arda/Alfred'e soru olarak iletilecek. Bu doğrulanana
   kadar satır dk0010'da **korundu** (test edilmiş koddan teori uğruna sapılmaz).
+  **Kapandı (2026-09-21):** (b) doğru değil, ama gerekçe farklı çıktı — `neopixelWrite`
+  pini `pinMode`'dan tamamen bağımsız kendi içinde sürüyor, `LED_BUILTIN`/`RGBLED`
+  aynı pin olsun olmasın satır **işlevsiz**. Kod'dan çıkarıldı.
 - **Yakınsama tespiti (bilgi):** portalın Ders 1.1'indeki AI promptlarından ikisi
   (Prompt 2.1 frekans hesabı, Prompt 2.2 gözün algı sınırı) bizim **ak0030 (eşik)**
   dersimizin tam konusu. Arda aynı fikri prompt olarak, biz ders olarak kurmuşuz.
