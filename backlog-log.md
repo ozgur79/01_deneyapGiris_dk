@@ -76,3 +76,19 @@ Append-only. Hiçbir şey silinmez.
 - Açık kalan iki soru backlog.md'ye taşındı: `portal_ders` belirsizliği (Modül 1
   listesinde buton dersine karşılık gelen madde yok) ve `malzeme.md`'deki 10K ohm
   pull-down direncinin sette olup olmadığının teyidi.
+
+## 2026-09-23
+
+- Oturum 2 için `dk0060_joystickOku` ve `dk0070_joystickLedParlaklik` üretildi.
+- Birinci dersin ana kaynağı `arsiv/200kkDegerleriniSeriPorttanOkuma.ino` olarak kayda
+  geçirildi; `dyminiV2500kkDahiliLedParlaklik.ino` yalnız yardımcı kaynak olarak belirtildi.
+- İkinci ders `dyminiV2500kkHariciLedParlaklik.ino` kaynağındaki D5, 0x1A, 540 eşiği,
+  0–255 eşlemesi ve 10'dan küçük değerleri sıfırlama davranışını taşır.
+- Kesin portal numarası müfredatta verilmediği için iki derste `portal_ders` tahmin edilmedi;
+  soru `backlog.md`'ye bırakıldı. İki ders test günlüğüne teste hazır olarak yazıldı.
+- Commit atılmadı; kart testi çalıştırılmadı.
+- Sonraki kullanıcı bildiriminde iki Oturum 2 dersinin testinin geçtiği belirtildi.
+  `Test-Gunlugu.md` iki ders için kullanıcı bildirimi olarak güncellendi;
+  asistanın ortamındaki `Deneyap_KumandaKolu.h` eksikliği nedeniyle yerel
+  derleme yapılmış gibi gösterilmedi. Joystick'in doğrulanmış bağlantı
+  yönergesi ve portal numaraları backlog'da açık kalır.

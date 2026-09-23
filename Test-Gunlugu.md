@@ -5,3 +5,5 @@
 | dk0030 | 2026-09-11 | evet | evet | — | Özgür kartta test etti |
 | dk0040 | 2026-09-18 | evet | evet | — | Özgür kartta test etti. |
 | dk0050 | 2026-09-21 | evet | evet | — | Özgür kartta test etti. |
+| dk0060 | 2026-09-23 | evet (kullanıcı bildirimi) | evet (kullanıcı bildirimi) | — | Kullanıcı testin geçtiğini bildirdi; yerel ortamda kütüphane eksik olduğundan ayrıca derlenmedi. |
+| dk0070 | 2026-09-23 | evet (kullanıcı bildirimi) | evet (kullanıcı bildirimi) | — | Kullanıcı testin geçtiğini bildirdi; yerel ortamda kütüphane eksik olduğundan ayrıca derlenmedi. |

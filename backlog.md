@@ -1,5 +1,30 @@
 # Backlog
 
+- [ ] **Oturum 2 donanım/doğrulama açığı:** `200kk...ino` joystick'in
+  bağlantı soketlerini veya pinlerini vermiyor. `dk0060`/`dk0070` §4,
+  doğrulanmış set yönergesi gelene kadar tam bağımsız kurulum tarifi
+  sunamıyor; bağlantı uydurulmadı. `Deneyap_KumandaKolu.h` mevcut
+  ortamda bulunmadığından yerel derleme başarısızdı. Kullanıcı kart
+  testinin geçtiğini bildirdi; açık kalan iş, öğrenciye tek başına
+  yeterli kesin bağlantı tarifini doğrulanmış kaynaktan eklemektir.
+
+- [x] **Pedagojik revizyon:** `dk0050`'nin dokuz bölümlü öğretim akışı
+  `dk0060` ve `dk0070`'ye uygulandı: kavram yorumları, satır satır
+  açıklama, kara kutu promptları, belirtiye göre sorun giderme,
+  ipuçlu sınav ve kademeli `SEN YAP` görevleri genişletildi.
+  `cozumler/` dosyaları görev yanıtlarını içerir. Kodun temel davranışı
+  korunur; kullanıcı kart testinin geçtiğini bildirdi.
+
+- [ ] **Oturum 2 portal numarası açık:** `dk0060_joystickOku` ve `dk0070_joystickLedParlaklik`
+  için `Modul2-Mufredat.md` yalnızca `2.2+` aday kapsamı veriyor; kesin `portal_ders`
+  numarası Özgür kararı bekliyor. Ders frontmatter'larında tahmin edilmedi.
+
+- [x] **Oturum 2 dersleri yazıldı (2026-09-23; kart testi sonradan geçti):** `dk0060_joystickOku`
+  ana kaynak olarak `arsiv/200kkDegerleriniSeriPorttanOkuma.ino` kullanır; dahili LED dosyası
+  yalnız yardımcı kaynaktır. `dk0070_joystickLedParlaklik` kümülatif D5 harici LED devresini
+  korur ve 540 → 0–255 eşlemesini kaynak davranışıyla taşır. Test günlüğüne iki teste hazır
+  satır eklendi. Bu, test öncesi teslim kaydıdır; sonraki test sonucu yukarıda kayıtlıdır.
+
 - [x] **`portal_ders` (dk0050) — Ortak çözdü, 2026-09-21:** Özgür'ün kararıyla yeni modül
   açıldı — **Modül 2: Dijital Giriş / Sensörler**
   (`zihinEv/🏰 300-Projects/deneyapAtolyem/Modul2-Mufredat.md`). dk0050 = **2.1**.
