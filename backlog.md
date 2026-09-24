@@ -1,5 +1,32 @@
 # Backlog
 
+- [x] **dk0120: kod tamamen kaldırıldı, salt görev kartı — Özgür onayladı
+  (2026-09-24), commit'lendi.** `.ino` dosyası silindi; klasörde yalnız
+  `ders.md` var. Ders bir görev kartı: hedef zinciri (yay → büyük daire →
+  küçük daire → S rota), kavram ipucu, "hangi dersteki kodu başlangıç
+  alırsın?" soruları (dk0080/dk0100/dk0110'a gönderme), %20 hız sınırı + 70'i
+  geçmeme kuralı, karşılıklı montajın yön kuralı, kalibrasyon döngüsü + pil
+  doluluğu notu, güvenlik, sayı/kod vermeyen AI Yoldaşı promptları, yetişkin
+  kartı. "Kod açıklaması" bölümü yok; mini sınav kaldı. Gerekçe (Özgür):
+  "öğrenci kendi kanatlarıyla uçup görevi tamamlasın." Test-Gunlugu.md
+  güncellendi: "ders kartı onaylandı, kod yok, Özgür'ün kararı".
+
+- [ ] **dk0060-dk0110 (+ portal remap) commit'lendi ve push'landı (2026-09-24,
+  commit 62cbdbe).** dk0120_daireVeSRota ve cozumler/dk0120_daireVeSRota bu
+  commit'e bilerek girmedi (henüz test edilmedi / çözüm kodu tartışmalı idi).
+
+- [ ] **dk0120: çözüm kodu kaldırıldı, SEN YAP kalibrasyon döngüsüne çevrildi
+  (2026-09-24, COMMIT'LENMEDİ — Özgür'ün açık talimatı).** `cozumler/
+  dk0120_daireVeSRota` klasörü tamamen silindi. §9 SEN YAP artık "tahmin et →
+  dene → gözle → bir değeri değiştir → tekrar dene" döngüsü olarak yazılı;
+  pilin doluluğunun sonucu değiştirdiği (aynı kod dolu pille daha büyük daire
+  çizebilir) açıkça belirtildi. §8'e üç kalibrasyon promptu eklendi — bunlar
+  sayı/hazır kod vermez, yalnız "hangi değeri hangi yöne değiştirmeliyim?"
+  sorusunu düşündürür. "Yanındaki yetişkine" kartına gözlem sorusu eklendi,
+  sayı içermiyor. Test-Gunlugu.md'deki dk0120 satırı "çözüm kodu yok (Özgür
+  kararı), ana kod testi bekliyor" olarak güncellendi. Bu iş bilerek
+  commit'lenmedi; sıradaki adım Özgür'ün ana kodu (tek yay) kartta test etmesi.
+
 - [ ] **12 modüllü portal yeniden numaralandırma + dk0120'nin meydan okumadan
   standart derse dönüşü (2026-09-24):**
   - Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür kararı, tam
