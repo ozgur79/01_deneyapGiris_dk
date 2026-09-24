@@ -1,6 +1,7 @@
 ---
 dk_no: dk0040
-portal_ders: "1.4"
+portal_ders: "2.1"
+portal_ders_not: "Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür, 2026-09-24): dk0040 eski 1.4'ten 2.1'e taşındı. Portalda henüz yayında değil, numara değişimi serbest."
 kaynak_ak: [ak0110]
 baslik: LED durumunu Seri Monitör'e yaz
 duzey: 0-temel

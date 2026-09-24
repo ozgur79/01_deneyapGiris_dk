@@ -1,7 +1,7 @@
 ---
 dk_no: dk0060
-portal_ders: null
-portal_ders_not: "Modul2-Mufredat.md konuyu yalnız 2.2+ aday kapsamı olarak listeliyor; kesin numara tahmin edilmedi."
+portal_ders: "6.1"
+portal_ders_not: "Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür, 2026-09-24): dk0060 eski 3.1'den 6.1'e taşındı. Portalda henüz yayında değil, numara değişimi serbest."
 kaynak_ak: []
 baslik: Joystick kolunu oku
 duzey: 0-temel
@@ -13,7 +13,7 @@ board:
   kart: Deneyap Mini v2
   kumanda_kolu_i2c_adresi: "0x1A"
   seri_hiz: 115200
-  pin_notu: "Joystick bağlantı pinleri kaynak kodda verilmedi; pin bilgisi uydurulmaz."
+  pin_notu: "Joystick, karta I2C kablosuyla bağlanır: kablo, Deneyap Mini v2'deki ve kumanda kolundaki I2C soketlerine takılır (SDA/SCL pinlerine tek tek jumper çekilmez). Bağlantı bilgisi Özgür, 2026-09-24."
 kaynak_kod: "D:\\Atolye\\Deneyap\\arsiv\\200kkDegerleriniSeriPorttanOkuma\\200kkDegerleriniSeriPorttanOkuma.ino (ana kaynak)"
 yardimci_kaynak: "D:\\Atolye\\Deneyap\\arsiv\\dyminiV2500kkDahiliLedParlaklik\\dyminiV2500kkDahiliLedParlaklik.ino (yalnız yardımcı; bu derste LED sürülmez)"
 ---
@@ -48,17 +48,11 @@ joystick'in Y eksenini gösterecek.
    durumda bırakma.
 2. Oturum 1'deki harici LED ve direnç devresini sökme. Bu ders onu kullanmasa da
    bir sonraki derste yeniden gerekecek.
-3. Kumanda kolunu **setin doğrulanmış Deneyap Mini v2 bağlantı yönergesine** göre
-   karta tak. Kaynak `.ino` dosyası yalnız `0x1A` adresini veriyor; hangi kablonun
-   hangi sokete gittiğini söylemiyor. Bu yüzden bu metin, kendi başına kablo
-   yerleşimini belirleyemez. Doğrulanmış yönerge yoksa bağlantıyı tahmin ederek
-   ilerleme; bu ders için kurulum bilgisi tamamlanmalıdır.
+3. Kumanda kolunu karta **I2C kablosuyla** bağla: kablonun bir ucu Deneyap Mini
+   v2 üzerindeki I2C soketine, öbür ucu kumanda kolundaki I2C soketine takılır.
+   SDA/SCL pinlerine (D7/D8) tek tek jumper çekilmez — tek kablo, iki soket.
+   Modülün I2C adresi `0x1A`'dır (`begin(0x1A)`).
 4. Kartı Type-C USB kablosuyla bilgisayara bağla.
-
-**Kurulum sınırı:** `D7/D8` gibi bir pin veya güç bağlantısı bu kaynaklardan
-çıkarılamaz. Kartın genel I2C pin tablosu, joystick modülünün soket yerleşimini
-tek başına kanıtlamaz. Kurulumun tam, öğrenciye tek başına yeterli tarifi
-donanım doğrulamasından sonra eklenmelidir.
 
 ## 5. Kod açıklaması
 
@@ -104,8 +98,8 @@ tanımlanmadığı için önceden kesin sonuç verilmez.
 - **Karakterler bozuk:** `Serial.begin(115200)` ile monitörde seçili hızın aynı
   olduğunu karşılaştır.
 - **Etiket görünüyor, sayı hiç değişmiyor:** Kolu gerçekten Y yönünde oynatıp
-  yeniden dene; ardından modülün doğrulanmış bağlantısını kontrol et. Bilinmeyen
-  pinleri deneyerek değiştirme.
+  yeniden dene; ardından I2C kablosunun her iki soketine (kart + kumanda kolu)
+  tam oturduğunu kontrol et. SDA/SCL'e tek tek jumper çekilmiş olmamalı.
 - **Beklenmedik veya hiç sayı yok:** `KumandaKolu.begin(0x1A)` ve `yRead()`
   yazımını ana kaynakla karşılaştır. Kaynakta başarısız başlatmayı bildirip
   bildirmediği gösterilmiyor; yalnız ekrana bakarak bağlantı arızasını
@@ -207,8 +201,8 @@ Cevabı söylemeyin, sırayla şunları sorun:
 
 1. Kod derlenip yüklendi mi, yoksa kütüphane hatasında mı durdu?
 2. Seri Monitör'de `Y Ekseni:` etiketi var mı, hız 115200 mü?
-3. Kolu Y yönünde oynatınca sayı değişiyor mu? Değişmiyorsa doğrulanmış
-   modül bağlantısı elinizde var mı? Yoksa pin tahmin etmeyin.
+3. Kolu Y yönünde oynatınca sayı değişiyor mu? Değişmiyorsa I2C kablosunun
+   kart ve kumanda kolu üzerindeki soketlere tam oturduğunu kontrol edin.
 
 ## 9. SEN YAP
 

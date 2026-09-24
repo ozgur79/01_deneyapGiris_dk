@@ -1,12 +1,108 @@
 # Backlog
 
-- [ ] **Oturum 2 donanım/doğrulama açığı:** `200kk...ino` joystick'in
-  bağlantı soketlerini veya pinlerini vermiyor. `dk0060`/`dk0070` §4,
-  doğrulanmış set yönergesi gelene kadar tam bağımsız kurulum tarifi
-  sunamıyor; bağlantı uydurulmadı. `Deneyap_KumandaKolu.h` mevcut
-  ortamda bulunmadığından yerel derleme başarısızdı. Kullanıcı kart
-  testinin geçtiğini bildirdi; açık kalan iş, öğrenciye tek başına
-  yeterli kesin bağlantı tarifini doğrulanmış kaynaktan eklemektir.
+- [ ] **12 modüllü portal yeniden numaralandırma + dk0120'nin meydan okumadan
+  standart derse dönüşü (2026-09-24):**
+  - Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür kararı, tam
+    gerekçe dosyanın içinde: müfredat 100'ü aşan derse büyüdü). Tüm dk
+    derslerinin `portal_ders`/`portal_ders_not` alanları güncellendi:
+    dk0010 1.1 (değişmedi) · dk0020 1.2 (değişmedi) · dk0030 1.3→1.4 ·
+    dk0040 1.4→2.1 · dk0050 2.1→3.1 · dk0060 3.1→6.1 · dk0070 3.2→6.2 ·
+    dk0080 4.1→7.1 · dk0090 4.2→8.1 · dk0100 4.3→8.2 · dk0110 5.1→9.1 ·
+    dk0120 5.2→9.2. dk0110'un `onkosul` alanındaki eski "portal 1.6" göndermesi
+    (ders.md + .ino), yeni şemada `for`/döngüler dersinin artık sabit bir
+    numarası olmadığı için "Modül 2 aday bandı" diye güncellendi.
+  - `dk0120_daireVeSRota` **meydan okuma formatından geri alındı.** Özgür
+    dokuz bölümlü standart ders istedi. Ana `.ino` artık tek bir yay çizen
+    basit bir kod (`hizIc=10`/`hizDis=18`, başlangıç değeri); büyük daire/
+    küçük daire/S rota §9 SEN YAP'ta kademeli görevler, çözümleri
+    `cozumler/`'de. `cozumler/`'deki eski kod Özgür'ün testinde "olmamış"
+    çıktı (küçük dairedeki %3 iç hız şüpheli, muhtemelen tekerlek dönmüyordu);
+    yeni çözüm dosyası tüm sayıları "BAŞLANGIÇ DEĞERİ — kalibre et" diye
+    işaretler, doğrulanmış değer uydurulmadı — Özgür'ün yeni testini bekliyor.
+  - Test-Gunlugu.md güncellendi (dk0120 satırı "SEN YAP biçimine çevrildi,
+    test bekliyor"). Commit atılmadı.
+
+- [ ] **Numara yer değiştirme + meydan okuma dönüşümü + %20 uyarısı (2026-09-24):**
+  Özgür'ün test sonuçlarına göre (dk0090/dk0100 %20 ile onaylandı, dörtgen/üçgen
+  onaylandı, daire+S rota "olmamış"):
+  - `dk0120_dortgenUcgen` → `dk0110_dortgenUcgen` (portal 5.1), `dk0110_daireVeSRota`
+    → `dk0120_daireVeSRota` (portal 5.2). Klasör, `cozumler/` ve `.ino` adları,
+    `dk_no`/`portal_ders` alanları, iki dersin birbirine yaptığı göndermeler
+    (`dk0110`'da artık dk0100'ün pivot dönüşüne, `dk0120`'de dk0110'a gönderme
+    var) güncellendi. Eski `dk0120_dortgenUcgen`/`dk0110_daireVeSRota` klasör
+    adları repoda kalmadı (grep ile doğrulandı, yalnız Test-Gunlugu/backlog'da
+    tarihsel not var).
+  - `dk0120_daireVeSRota` (artık bu ad) **meydan okuma (challenge)** formatına
+    çevrildi: adım adım ders değil; ders.md hedef + ipuçları + iskelet kod +
+    "yanındaki yetişkine" + AI Yoldaşı (meydan-okuma uyumlu, cevap vermeyen)
+    yapısında. Ana `.ino` bir iskelet (TODO blokları, çalışır ama hareket
+    üretmez); tam çözüm yalnız `cozumler/dk0120_daireVeSRota`'da.
+  - dk0090, dk0100, dk0110, dk0120'nin dördünde de §1 Hedef'te ya da kod
+    başındaki yorumda "araç en fazla %20 hızla gider, ... ama 70'i geçme"
+    cümlesi eklendi (portal bir tadım dilimi, öğrenci önceki dersleri görmemiş
+    olabilir gerekçesiyle).
+  - Test-Gunlugu.md ve backlog.md güncellendi. Commit atılmadı.
+
+- [ ] **SORU — Ortak'a: `for` için ak kazanım id'si açılmalı mı? (2026-09-24)**
+  `dk0110_dortgenUcgen` (eski adı `dk0120_dortgenUcgen`), `for` döngüsünü kara
+  kutu OLARAK DEĞİL, önkoşul (portal 1.6, Döngüler) olarak kullanıyor.
+  `D:\Atolye\Arduino\01_arduinoGiris_ak\kazanimlar.md` kontrol edildi,
+  `for`/döngü için hiçbir id yok. İş emri "yeni id uydurma, soru olarak yaz"
+  dediği için buraya yazıldı — yeni id **açılmadı**. Karar Özgür'e/Ortak'a ait.
+
+- [ ] **Oturum 4 dersleri yazıldı, teste hazır (2026-09-24):** İş emri
+  `is-emri-dk-oturum4.md` (zihinEv/Ortak) uygulandı.
+  - `dk0100_legoArac` → `dk0100_kumandaSagaSola` (4.3) olarak yeniden
+    yazıldı: eski `cozumler/dk0100_legoArac`'taki X-ekseni pivot dönüş kodu
+    artık dersin **ana kodu**; `saveEsik` yazım hatası `sagaEsik` olarak
+    düzeltildi. LEGO/powerbank/montaj bilgileri eski dk0100'den taşındı.
+  - `dk0110_daireVeSRota` (5.1, kumandasız, sabit kod): iki tekerlek farklı
+    hızda döndürülerek büyük daire → küçük daire → S rota çizdiriliyor.
+    Tüm hız/süre sayıları **başlangıç değeri** olarak işaretlendi, uydurulmadı.
+  - `dk0120_dortgenUcgen` (5.2, kumandasız): önce "90° dönmek kaç ms sürüyor"
+    kalibrasyonu, sonra `for` ile dörtgen (4×90°) ve üçgen (3×120°, dış açı).
+    `for` bu derste kara kutu değil, önkoşuldur (yukarıdaki soru maddesine bak).
+  - Üçünün de `.ino` + `ders.md` + `cozumler/` dosyaları var. `Portal-Ders-Haritasi.md`
+    (Ortak tarafından güncellendi) tek kaynak olarak kullanıldı.
+  - **Ek talimat aynı oturumda uygulandı (Özgür, çok sert hareket geri
+    bildirimi):** `dk0090`/`dk0100`'de `maxHiz`/`donusHizi` 70'ten 20'ye
+    düşürüldü; `map`'in hedef aralığı 0-100'den doğrudan 0-`maxHiz`'e
+    değiştirildi (kaynaktan bilinçli sapma, gerekçesiyle kod yorumunda ve
+    ders.md'de yazılı). `dk0110`/`dk0120`'deki başlangıç hızları da 20'yi
+    geçmeyecek şekilde güncellendi. `%70` (donanımsal) ile `%20` (güvenlik)
+    sınırları ders.md'lerde ayrı ayrı açıklandı. `malzeme.md`'ye 3D basılı
+    LEGO tabla (7x11 frame) ve kumanda kolu/motor sürücünün taktığı 5x7
+    frame bilgisi eklendi; dk0100'ün montaj yer tutucusu bu bilgiyle
+    kısmen dolduruldu, adım sırası hâlâ Özgür'den bekleniyor.
+  - `Test-Gunlugu.md` güncellendi: dk0090/dk0100 "çalışıyor ama sert, hız
+    düşürüldü, yeniden test gerekiyor" olarak işaretlendi; dk0110/dk0120
+    için yeni "teste hazır" satırları açıldı.
+  - Çıplak pin taraması yapıldı (aşağıda rapor edilecek). Commit atılmadı.
+
+- [ ] **Oturum 3 dersleri yazıldı, teste hazır (2026-09-24) — kısmen güncel değil,
+  bkz. Oturum 4 maddesi yukarıda:** `dk0100_legoArac`, Oturum 4'te
+  `dk0100_kumandaSagaSola` olarak yeniden adlandırıldı/yazıldı; bu maddedeki
+  `dk0100_legoArac` referansları artık geçerli değil. İş emri
+  `is-emri-dk-oturum3.md` (zihinEv/Ortak) uygulandı — `dk0080_motorSurucu`
+  (4.1, motor sürücü tek başına), `dk0090_kumandaIleriGeri` (4.2, kumanda kolu →
+  motor yön/hız, kaynağın birebir öğretim hâli) ve `dk0100_legoArac` (5.1,
+  LEGO araç — kod dk0090 ile aynı). Üçünün de `.ino` + `ders.md` +
+  `cozumler/` dosyaları var. `dk0100`'ün SEN YAP görevi (X ekseniyle yerinde
+  dönüş) `cozumler/dk0100_legoArac`'ta ayrı bir kod olarak çözüldü; bu kod
+  kaynakta yoktu, dk tarafından tasarlandı ve **hiç kartta denenmedi**
+  (`MOTOR1=sol/MOTOR2=sağ` varsayımı doğrulanmalı). `dk0100`'ün LEGO montaj
+  adımları Özgür'den bekleniyor, yer tutucu bırakıldı — uydurulmadı.
+  Powerbank'ın karta bağlantısı (Type-C USB) Özgür tarafından oturum
+  içinde teyit edildi ve `malzeme.md` + `dk0100/ders.md`'ye işlendi.
+  `Test-Gunlugu.md`'de dört "teste hazır" satırı açıldı. Çıplak pin taraması
+  yapıldı, sıfır sonuç (bu üç ders yalnız I2C adresi kullanıyor, dijital pin
+  yok). Commit atılmadı — Ortak denetleyecek, sonra Özgür kartta test edecek.
+
+- [x] **Oturum 2 donanım/doğrulama açığı — kapandı (Özgür, 2026-09-24):**
+  Kumanda kolu karta I2C kablosuyla bağlanır; kablo Deneyap Mini v2'deki ve
+  kumanda kolundaki I2C soketlerine takılır (SDA/SCL'e tek tek jumper
+  çekilmez), adres `0x1A`. `dk0060`/`dk0070` §4 (ve ilgili sorun giderme/
+  yetişkin kartı satırları) bu bilgiyle güncellendi.
 
 - [x] **Pedagojik revizyon:** `dk0050`'nin dokuz bölümlü öğretim akışı
   `dk0060` ve `dk0070`'ye uygulandı: kavram yorumları, satır satır
@@ -15,9 +111,9 @@
   `cozumler/` dosyaları görev yanıtlarını içerir. Kodun temel davranışı
   korunur; kullanıcı kart testinin geçtiğini bildirdi.
 
-- [ ] **Oturum 2 portal numarası açık:** `dk0060_joystickOku` ve `dk0070_joystickLedParlaklik`
-  için `Modul2-Mufredat.md` yalnızca `2.2+` aday kapsamı veriyor; kesin `portal_ders`
-  numarası Özgür kararı bekliyor. Ders frontmatter'larında tahmin edilmedi.
+- [x] **Oturum 2 portal numarası açık — kapandı (Özgür, 2026-09-24):** Tek kaynak artık
+  `Portal-Ders-Haritasi.md`. `dk0060` = `3.1`, `dk0070` = `3.2`. Frontmatter'daki
+  `portal_ders` ve `portal_ders_not` alanları güncellendi.
 
 - [x] **Oturum 2 dersleri yazıldı (2026-09-23; kart testi sonradan geçti):** `dk0060_joystickOku`
   ana kaynak olarak `arsiv/200kkDegerleriniSeriPorttanOkuma.ino` kullanır; dahili LED dosyası

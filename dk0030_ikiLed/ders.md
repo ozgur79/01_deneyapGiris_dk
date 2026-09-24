@@ -1,6 +1,7 @@
 ---
 dk_no: dk0030
-portal_ders: "1.3 — İki LED yarısı"
+portal_ders: "1.4 — İki LED yarısı"
+portal_ders_not: "Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür, 2026-09-24): dk0030 eski 1.3'ten 1.4'e taşındı. Portalda henüz yayında değil, numara değişimi serbest."
 kaynak_ak: [ak0030, ak0040, ak0050]
 baslik: İki LED'i sırayla yak
 duzey: 0-temel

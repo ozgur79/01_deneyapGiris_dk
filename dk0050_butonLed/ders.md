@@ -1,9 +1,11 @@
 ---
 dk_no: dk0050
-portal_ders: "2.1"
+portal_ders: "3.1"
 portal_ders_not: "Modul1-Mufredat.md'deki 1.1-1.6 hedef listesinde karşılığı yoktu.
   Özgür'e soruldu (2026-09-21): yeni Modül 2 (Dijital Giriş / Sensörler) açıldı,
-  bkz. Modul2-Mufredat.md. dk0050 = 2.1."
+  bkz. Modul2-Mufredat.md. dk0050 = 2.1 (o zamanki 5 modüllü yapıda).
+  Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür, 2026-09-24): dk0050
+  eski 2.1'den 3.1'e taşındı. Portalda henüz yayında değil, numara değişimi serbest."
 kaynak_ak: []
 kaynak_ak_planlanan: ak02xx
 baslik: Butona basınca LED yansın

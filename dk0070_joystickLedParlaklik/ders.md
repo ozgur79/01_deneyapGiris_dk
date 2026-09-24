@@ -1,7 +1,7 @@
 ---
 dk_no: dk0070
-portal_ders: null
-portal_ders_not: "Modul2-Mufredat.md konuyu yalnız 2.2+ aday kapsamı olarak listeliyor; kesin numara tahmin edilmedi."
+portal_ders: "6.2"
+portal_ders_not: "Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür, 2026-09-24): dk0070 eski 3.2'den 6.2'ye taşındı. Portalda henüz yayında değil, numara değişimi serbest."
 kaynak_ak: []
 baslik: Joystick ile LED parlaklığını değiştir
 duzey: 0-temel
@@ -16,7 +16,7 @@ board:
   mantik_gerilimi: 3.3V
   led_direnc: 220 ohm
   seri_hiz: 115200
-  pin_notu: "D5 kart üzerindeki etikettir; çıplak GPIO/pin sayısı kullanılmaz. dk0050 LED'i D9'a bağlatmıştı: bu derste LED/direnç devresi sökülmez, yalnız LED'in kart tarafındaki jumper'ı D9'dan D5'e taşınır. Joystick pinleri kaynakta verilmediği için uydurulmaz."
+  pin_notu: "D5 kart üzerindeki etikettir; çıplak GPIO/pin sayısı kullanılmaz. dk0050 LED'i D9'a bağlatmıştı: bu derste LED/direnç devresi sökülmez, yalnız LED'in kart tarafındaki jumper'ı D9'dan D5'e taşınır. Joystick, karta I2C kablosuyla bağlanır: kablo, Deneyap Mini v2'deki ve kumanda kolundaki I2C soketlerine takılır (SDA/SCL pinlerine tek tek jumper çekilmez). Bağlantı bilgisi Özgür, 2026-09-24."
 kaynak_kod: "D:\\Atolye\\Deneyap\\arsiv\\dyminiV2500kkHariciLedParlaklik\\dyminiV2500kkHariciLedParlaklik.ino (ana kaynak)"
 yardimci_kaynak: "D:\\Atolye\\Deneyap\\arsiv\\dyminiV2500kkDahiliLedParlaklik\\dyminiV2500kkDahiliLedParlaklik.ino (karşılaştırma için yardımcı)"
 ---
@@ -52,14 +52,13 @@ sayısı görünecek; ikisini birlikte takip edebilirsin.
    jumper'ını D9'dan **D5**'e taşı; uzun bacağın D5'e, kısa bacağın
    220 ohm direnç üzerinden GND'ye bağlı olduğunu doğrula. `dk0070`
    kodu D5'i sürer; jumper D9'da kalırsa LED tepki vermez.
-3. Joystick bağlantısını `dk0060` için **doğrulanmış set yönergesiyle**
-   kurulmuş hâliyle koru. Kaynak `.ino`, modülün kablo/soket sırasını
-   söylemiyor. Bu bilgi doğrulanmadan yeni bir pin veya bağlantı çizimi
-   eklemek güvenilir olmaz; yönerge elinde yoksa burada dur.
+3. Joystick bağlantısını `dk0060`'daki gibi koru: I2C kablosu kartın ve
+   kumanda kolunun I2C soketlerine takılı kalır, SDA/SCL'e tek tek jumper
+   çekilmez.
 4. Kartı Type-C USB ile bilgisayara bağla.
 
 Metin şeması: LED uzun bacak (+) → D5; kısa bacak (−) → 220 ohm direnç → GND.
-Joystick bağlantısı, doğrulanmış modül yönergesine göre ayrıca korunur.
+Joystick, I2C kablosuyla kart ve kumanda kolu soketleri arasında bağlıdır.
 
 ## 5. Kod açıklaması
 
@@ -118,8 +117,8 @@ modül üzerinde fiziksel deneyle doğrula.
 - **Seri Monitör boş:** Kodun gerçekten yüklendiğini, doğru portu ve
   monitörün açık olduğunu kontrol et. Hız 115200 olmalı.
 - **Y değeri değişmiyor:** Önce `dk0060` ile aynı davranışın görülüp
-  görülmediğine bak. Joystick'in doğrulanmış bağlantısını kontrol et;
-  bilinmeyen pinleri deneme yanılmayla değiştirme.
+  görülmediğine bak. I2C kablosunun kart ve kumanda kolu soketlerine
+  tam oturduğunu kontrol et.
 - **Y değişiyor ama `LED parlaklik` hep 0:** Y değeri 540'ı geçiyor mu?
   `if` koşulunu ve her turun başındaki `ileri = 0` satırını incele.
 - **Parlaklık sayısı 0'dan büyük ama LED sönük:** Okuma/eşleme kısmı
@@ -185,8 +184,7 @@ modül üzerinde fiziksel deneyle doğrula.
 > **Önce bunu oku.** AI Yoldaşı zorunlu değildir; erişimin yoksa dersi §6 Sorun giderme
 > ve aşağıdaki yetişkin kartıyla tamamlayabilirsin. *AI'ın dediği devrende/kartında
 > çalışmıyorsa AI yanılmıştır, devren haklıdır.* AI'dan pin numarası, direnç değeri,
-> menü yolu veya bağlantı tarifi isteme; doğrulanmamış joystick bağlantısını
-> AI'a tamamlattırma.
+> menü yolu veya bağlantı tarifi isteme.
 
 ### Ders promptları
 
