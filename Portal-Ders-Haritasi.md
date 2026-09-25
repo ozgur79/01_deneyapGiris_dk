@@ -1,6 +1,6 @@
 ---
 title: Portal Ders Haritası — Deneyap Atölyem
-updated: 2026-09-24
+updated: 2026-09-25
 karar: "Özgür, 2026-09-24 — portal_ders numaraları bu dosyadan verilir; 12 modüllü yapıya taşındı"
 ---
 
@@ -55,7 +55,7 @@ seri port her modülde "kartın içinde ne oluyor?" sorusunun aracıdır.
 |-------------|------|----|---------|--------------------|
 | 1.1 | Dahili RGB LED | `dk0010` | 1.1 | ✅ · **portalda yayında** |
 | 1.2 | Harici LED devresi | `dk0020` | 1.2 | ✅ · **portalda yayında** |
-| 1.3 | LED'i hızlandır (hız merdiveni) | — | — | ⬜ ak0030 |
+| 1.3 | LED'i hızlandır (hız merdiveni) | `dk0130` | — | ✅ |
 | 1.4 | İki LED | `dk0030` | 1.3 | ✅ |
 | 1.5–1.7 | `const int` · kara şimşek · trafik lambası | — | — | ⬜ ak0050–0070 |
 | 2.1 | LED durumunu seri porta yaz (YANDI/SÖNDÜ) | `dk0040` | 1.4 | ✅ |

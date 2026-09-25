@@ -92,3 +92,30 @@ Append-only. Hiçbir şey silinmez.
   asistanın ortamındaki `Deneyap_KumandaKolu.h` eksikliği nedeniyle yerel
   derleme yapılmış gibi gösterilmedi. Joystick'in doğrulanmış bağlantı
   yönergesi ve portal numaraları backlog'da açık kalır.
+
+## 2026-09-25
+
+- **dk0130_hizliLed üretildi** (portal 1.3, "LED'i hızlandır"). İş emri Ortak'tan
+  (`D:\zihinEv\🏰 300-Projects\deneyapAtolyem\is-emri-dk0130.md`), Özgür onaylı. Kaynak
+  `ak0030_hizliLed`; devre dk0020 ile aynı (LED + 220 ohm, D5). Hız merdiveni
+  (1→5→10→25→50/sn) ve "eşiği sen bul" SEN YAP aynen korundu, eşik sayısı hiçbir dosyada
+  verilmedi (görme eşiği kişiden kişiye değişir). Kara kutu `[void, OUTPUT]` dk0020 ile
+  aynı; ak0030'daki "Merak Köşesi: void (1. tur)" hem `.ino` yorumuna hem `ders.md` §5'e
+  eklendi. AI Yoldaşı promptları dk doktrinine göre bağlamlandı. Ortak denetledi, geçti.
+- Test sırasında `.ino`'da SEN YAP'ın "saniyede 10 kez" adımı denenmiş, loop()'taki iki
+  `delay()` 500'den 50'ye kalmış bulundu — yorumlarla ve ders.md'nin anlattığı ilk hâlle
+  (saniyede 1 kez) uyuşmadığı fark edildi, Özgür 500'e geri aldı. Özgür kartta test etti,
+  onayladı. `Test-Gunlugu.md` ve `Portal-Ders-Haritasi.md` (1.3 → ✅) güncellendi.
+  Commit + push edildi.
+- Aynı oturumda **dk0030 küçük düzeltme** (Ortak'tan iletilen, Özgür onaylı, kod
+  değişmedi): `portal_ders: "1.4 — İki LED yarısı"` → `"1.4"` (açıklama `portal_ders_not`'a
+  taşındı; Alfred artık bu alanı makine olarak okuyor, diğer 12 dk dersi zaten yalnız
+  numara kullanıyormuş, taranıp doğrulandı). Görme eşiği tekrarı kısaltıldı: dk0130 (1.3)
+  eşiği tam işlediği için dk0030'daki §5/§6/mini sınav ipucu/AI Yoldaşı promptu/§9 SEN
+  YAP'taki "gündüz-akşam yeniden deney yap" ritüeli çıkarıldı, yerine "1.3'te bulduğun
+  eşiği hatırla/kullan" geri bağlantısı kondu. `kazanimlar`'dan `hw.gorme-esigi`,
+  `kaynak_ak`'tan `ak0030` çıkarıldı (`[ak0040, ak0050]` kaldı). `.ino` değişmedi, yeniden
+  kart testi gerekmedi. dk0130 ile birlikte commit + push edildi.
+- Yeni teslim düzeni not edildi (Özgür, 2026-09-25): dap ara katmanı kalktı, Alfred
+  içeriği doğrudan bu depodan (`github.com/ozgur79/01_deneyapGiris_dk`) çekiyor;
+  `Portal-Ders-Haritasi.md`'de `portal_ders` alanı olan ve ✅ olan dersler portala girer.

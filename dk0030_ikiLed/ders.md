@@ -1,14 +1,13 @@
 ---
 dk_no: dk0030
-portal_ders: "1.4 — İki LED yarısı"
-portal_ders_not: "Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür, 2026-09-24): dk0030 eski 1.3'ten 1.4'e taşındı. Portalda henüz yayında değil, numara değişimi serbest."
-kaynak_ak: [ak0030, ak0040, ak0050]
+portal_ders: "1.4"
+portal_ders_not: "İki LED yarısı. Portal-Ders-Haritasi.md 12 modüllü yapıya taşındı (Özgür, 2026-09-24): dk0030 eski 1.3'ten 1.4'e taşındı. Portalda henüz yayında değil, numara değişimi serbest."
+kaynak_ak: [ak0040, ak0050]
 baslik: İki LED'i sırayla yak
 duzey: 0-temel
 unite: 0-LED
 kazanimlar:
   - cpp.delay
-  - hw.gorme-esigi
   - cpp.coklu-cikis
   - hw.coklu-led
   - cpp.const-int
@@ -75,10 +74,8 @@ Metin şeması:
 | `delay(300);` | Bu zıt durumu 300 milisaniye korur. Sayı küçüldükçe yanıp sönme hızlanır. |
 | Sonraki iki `digitalWrite` | Durumlar yer değiştirir: birinci söner, ikinci yanar. |
 
-Bir tam tur iki bekleme sürer. `delay(300)` için tur 600 milisaniyedir. İki LED birer kez
-yanıp sönerken gözün bir süre sonra tek tek sönmeleri seçemeyebilir. Buna **görme eşiği**
-denir; değişen LED değil, gözün hızlı değişimi ayırabilme sınırıdır. Bu sınır kişiye ve
-ortam ışığına göre değişebilir.
+Bir tam tur iki bekleme sürer. `delay(300)` için tur 600 milisaniyedir — bu hız hâlâ
+1.3'te bulduğun görme eşiğinin çok altında, LED'lerin yer değiştirmesini rahatça görürsün.
 
 ### İleri analiz [ileri]
 
@@ -90,8 +87,8 @@ tamamen bağımsız, farklı ritimler bu derste kurulamaz.
 ## 6. Çalıştır ve gözlemle
 
 Kodu yüklediğinde birinci LED yanarken ikinci LED sönük kalır; 300 milisaniye sonra yer
-değiştirirler. İlk iki `delay()` değerini 100 yapıp aynı gözlemi tekrarla. Gündüz ve akşam
-aynı deneyi yaparak gözünün eşiğinin değişip değişmediğini not et.
+değiştirirler. İstersen iki `delay()` değerini 1.3'te bulduğun eşiğe yaklaştır — iki LED de
+aynı anda yanıyormuş gibi görünmeye başlıyor mu, yoksa hâlâ ayırt edilebiliyor mu?
 
 ### Sorun giderme
 
@@ -144,7 +141,7 @@ aynı deneyi yaparak gözünün eşiğinin değişip değişmediğini not et.
    - B) Gözün sönmeleri ayırt edemiyordur
    - C) Kart `delay` satırlarını atlıyordur
    - D) Direnç LED'i açık tutuyordur
-   - ipucu: Sınırı koyan parça LED mi, göz mü?
+   - ipucu: 1.3'te bulduğun görme eşiğini hatırla — sınırı koyan parça LED mi, göz mü?
 
 6. [ileri] Birinci LED'in kablosunu D5'ten D6'ya taşırsan, isim kullanan kodda hangi satırı değiştirmek yeterlidir?
    - A) `const int birinciLed = D5;` satırı
@@ -172,11 +169,12 @@ aynı deneyi yaparak gözünün eşiğinin değişip değişmediğini not et.
   `const int` ile isim veriyorum. Bana pin numarası, direnç değeri, menü yolu veya bağlantı
   tarifi verme. Cevabı söylemeden, telefon rehberi benzetmesiyle sayıya isim vermenin neden
   işime yarayacağını düşündürecek bir soru sor."
-- [ileri] **Görme eşiği** — "Sen meraklı bir rehbersin. Bağlam: Deneyap Mini v2 kartında,
-  3.3V mantık seviyesinde, iki LED ve her biri için 220 ohm direnç kullanıyorum. LED'ler çok
-  hızlanınca sürekli yanıyor gibi görünüyor. Bana pin numarası, direnç değeri, menü yolu veya
-  bağlantı tarifi verme. Cevabı söylemeden, gözün algı sınırı üzerine deney yapmamı sağlayacak
-  bir soru sor."
+- [ileri] **Görme eşiği hatırlatması** — "Sen meraklı bir rehbersin. Bağlam: Deneyap Mini v2
+  kartında, 3.3V mantık seviyesinde, iki LED ve her biri için 220 ohm direnç kullanıyorum;
+  1.3'te (LED'i hızlandır dersinde) bir görme eşiği bulmuştum. Şimdi iki LED'i hızlandırınca
+  ikisi de sürekli yanıyor gibi görünüyor. Bana pin numarası, direnç değeri, menü yolu veya
+  bağlantı tarifi verme. Cevabı söylemeden, bu durumun 1.3'teki bulgumla nasıl bağlantılı
+  olduğunu bana sorduracak tek bir soru sor."
 
 ### Kara kutu promptları
 
@@ -203,7 +201,7 @@ söylemeyin, sırayla şunları sorun:
 ## 9. SEN YAP
 
 1. İki LED'i zıt değil, birlikte çalıştır: ikisi aynı anda yansın ve aynı anda sönsün.
-2. İki `delay(300)` satırını önce `delay(100)`, sonra daha küçük aynı değerlere çevir. Gündüz
-   ve akşam hangi değerde sönmeyi ayırt edemediğini not et.
+2. İki `delay(300)` satırını, 1.3'te bulduğun eşik değerine yaklaşana kadar küçült. Sönmeyi
+   hâlâ görebiliyor musun, yoksa iki LED de sürekli yanıyormuş gibi mi duruyor?
 3. `birinciLed` ve `ikinciLed` adlarını kendi LED'lerinin gerçek renklerine göre değiştir.
    Aynı adı kodun hangi yerlerinde değiştirdiğini say.
