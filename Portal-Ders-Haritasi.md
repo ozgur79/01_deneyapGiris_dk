@@ -57,9 +57,11 @@ seri port her modülde "kartın içinde ne oluyor?" sorusunun aracıdır.
 | 1.2 | Harici LED devresi | `dk0020` | 1.2 | ✅ · **portalda yayında** |
 | 1.3 | LED'i hızlandır (hız merdiveni) | `dk0130` | — | ✅ |
 | 1.4 | İki LED | `dk0030` | 1.3 | ✅ |
-| 1.5–1.7 | `const int` · kara şimşek · trafik lambası | — | — | ⬜ ak0050–0070 |
+| 1.5 | Kara şimşek (kod tekrarı) | `dk0140` | — | ✅ |
+| 1.6 | Trafik lambası | `dk0150` | — | ✅ |
 | 2.1 | LED durumunu seri porta yaz (YANDI/SÖNDÜ) | `dk0040` | 1.4 | ✅ |
-| 2.2+ | trafik lambası rengini yazsın · sayaç · `for` · `while` · `if`+`%` · rastgele · dizi · PWM · `Serial.read` · `millis()` | — | 1.5, 1.6 | ⬜ ak Ünite 1 |
+| 2.2 | Trafik lambası rengini yazsın | `dk0160` | — | ✅ |
+| 2.3+ | sayaç · `for` · `while` · `if`+`%` · rastgele · dizi · PWM · `Serial.read` · `millis()` | — | — | ⬜ ak Ünite 1 |
 | 3.1 | Butona basınca LED yansın | `dk0050` | 2.1 | ✅ |
 | 3.2+ | iki buton + `&&` · butonla trafik lambası … | — | — | ⬜ ak Ünite 2 |
 | 4.1 | Buton durumunu seri porta yaz | — | 2.2 | ⬜ |
@@ -74,6 +76,8 @@ seri port her modülde "kartın içinde ne oluyor?" sorusunun aracıdır.
 | 9.1 | Kodla dörtgen ve üçgen (`for`, kalibrasyon) | `dk0110_dortgenUcgen` | 5.1 | ✅ |
 | 9.2 | Kodla yay çiz: iki tekerlek, iki hız (SEN YAP: daire, S rota) | `dk0120_daireVeSRota` | 5.2 | 🔧 SEN YAP biçimine çevriliyor |
 | 10.x · 11.x · 12.x | çizgi izleyen robot · ESP-NOW tadımı · LEGO tema projeleri | — | — | ❓ `Mufredat-Tahmini.md` |
+
+`const int` (ak0050) ayrı ders değil; 1.4'te (dk0030) işleniyor (Ortak, 2026-09-25).
 
 **İlk dilim (tadım, 12 ders):** 1.1 · 1.2 · 1.4 · 2.1 · 3.1 · 6.1 · 6.2 · 7.1 · 8.1 ·
 8.2 · 9.1 · 9.2. Her modülden bir örnek alındığı için aralarda boşluk var. Tam müfredatta

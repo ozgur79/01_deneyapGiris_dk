@@ -119,3 +119,29 @@ Append-only. Hiçbir şey silinmez.
 - Yeni teslim düzeni not edildi (Özgür, 2026-09-25): dap ara katmanı kalktı, Alfred
   içeriği doğrudan bu depodan (`github.com/ozgur79/01_deneyapGiris_dk`) çekiyor;
   `Portal-Ders-Haritasi.md`'de `portal_ders` alanı olan ve ✅ olan dersler portala girer.
+- **1.5–1.7 tutarsızlığı çözüldü:** Portal-Ders-Haritasi.md'nin "1.5–1.7 ⬜ ak0050–0070"
+  satırının yanlış olduğu bulundu — ak0050'nin kazanımı (`cpp.const-int`) zaten dk0030'a
+  (1.4) girmişti. Ortak karar verdi: `const int` ayrı ders değil, 1.4'e bağlı kalır;
+  1.5 = kara şimşek (ak0060), 1.6 = trafik lambası (ak0070). Harita buna göre ikiye
+  bölündü, tabloya karar notu eklendi.
+- **dk0140_karaSimsek üretildi** (portal 1.5, kaynak ak0060). Ders 1.4'ün (dk0030)
+  D5/D6 devresinden devam eder, üçüncü/dördüncü LED için D9/D10 seçildi
+  (Donanim-Referans-DYMv2.md'ye göre: D7/D8 I2C'ye ayrılmış, D13 GPKEY/BOOT ile
+  paylaşılıyor, bu yüzden atlandı). `const int` bilinen kavram sayıldı, 1.4'e
+  bağlandı, yeniden anlatılmadı.
+- **dk0150_trafikLambasi üretildi** (portal 1.6, kaynak ak0070). Aynı D5/D6 devresi +
+  yeni D9. LED renk belirsizliği için not eklendi: kırmızı/sarı/yeşil yoksa aynı
+  renkte 3 LED de olur, roller pin adından ayırt edilir. ak0070'in "OUTPUT (2. tur)"
+  Merak Köşesi'si Ders 1.4'e referansla taşındı.
+- Ortak ikisini de denetledi: pinler Donanim-Referans ile uyumlu, çıplak pin yok,
+  frontmatter/harita doğru, geçti.
+- **dk0160_trafikLambasiYazsin üretildi** (portal 2.2, kaynak ak0115). Harcama dersi:
+  dk0150 (1.6) kodu değişmeden üstüne `Serial.println` eklendi, devre aynı
+  (D5/D6/D9), seri hız 115200 (dk kuralı, ak0115'teki 9600 değil). `Serial` kara
+  kutusu Ders 2.1'e (dk0040), `const int`/`OUTPUT` 1.4/1.6'ya bağlandı, yeniden
+  anlatılmadı. Haritada 2.2 satırı `dk0160` olarak ayrıldı, `2.2+` satırı `2.3+` oldu.
+- Kalfa oturumu kapanırken devir notu bırakıldı: bekleyen dk0140/0150/0160 kart
+  testi, sonraki kaynak ak Ünite 1 Paket 2 (Özgür'ün ak tezgahında).
+- **Özgür dk0140/dk0150/dk0160'ı kartta test etti, üçü de geçti.** Test-Gunlugu.md ve
+  Portal-Ders-Haritasi.md (1.5/1.6/2.2 → ✅) güncellendi, üçü tek commit'te
+  birleştirilip push edildi.

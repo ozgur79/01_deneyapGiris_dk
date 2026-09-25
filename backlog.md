@@ -1,5 +1,10 @@
 # Backlog
 
+- [ ] **Sonraki kaynak: ak Ünite 1 Paket 2 (ak0120–ak0140), Özgür'ün ak
+  tezgahında üretiliyor.** İş emri Ortak'ta:
+  `D:\zihinEv\🏰 300-Projects\arduinoMufredat\is-emri-ak-unite1-paket2.md`.
+  ak tarafında üretilip test edilince dk'ye porte edilecek.
+
 - [x] **dk0120: kod tamamen kaldırıldı, salt görev kartı — Özgür onayladı
   (2026-09-24), commit'lendi.** `.ino` dosyası silindi; klasörde yalnız
   `ders.md` var. Ders bir görev kartı: hedef zinciri (yay → büyük daire →
